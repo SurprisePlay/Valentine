@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be My Valentine 💘</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #ffe6ea;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    img {
+      max-width: 300px;
+      border-radius: 12px;
+    }
+
+    h1 {
+      margin: 20px 0;
+      color: #d6336c;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      position: relative;
+      height: 100px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    #yesBtn {
+      background-color: #ff4d6d;
+      color: white;
+      left: 50%;
+      transform: translateX(-120%);
+    }
+
+    #noBtn {
+      background-color: #adb5bd;
+      color: black;
+      left: 50%;
+      transform: translateX(20%);
+    }
+
+    #success {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="main">
+    <img src="cat.png" alt="Cat">
+    <h1>Will you be my Valentine? 💖</h1>
+
+    <div class="buttons">
+      <button id="yesBtn">Yes 💘</button>
+      <button id="noBtn">No 🙄</button>
+    </div>
+  </div>
+
+  <div class="container" id="success">
+    <img src="yes.gif" alt="Happy GIF">
+    <h1>You made the right choice 😌💞</h1>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const main = document.getElementById("main");
+    const success = document.getElementById("success");
+
+    const noTexts = [
+      "Are you sure?",
+      "Really? 😳",
+      "Think again!",
+      "Wrong answer 😤",
+      "Try harder 💀"
+    ];
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 150);
+      const y = Math.random() * (window.innerHeight - 150);
+
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+
+      noBtn.textContent =
+        noTexts[Math.floor(Math.random() * noTexts.length)];
+    });
+
+    yesBtn.addEventListener("click", () => {
+      main.style.display = "none";
+      success.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
