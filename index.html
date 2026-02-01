@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Be My Valentine 💘</title>
+  <title>Garu 💖</title>
 
   <style>
     body {
       margin: 0;
       height: 100vh;
-      background: #ffe6ea;
+      background: linear-gradient(135deg, #ffd6e0, #ffeef3);
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", sans-serif;
       overflow: hidden;
     }
 
@@ -21,28 +21,35 @@
     }
 
     img {
-      max-width: 300px;
-      border-radius: 12px;
+      max-width: 280px;
+      border-radius: 14px;
     }
 
     h1 {
       margin: 20px 0;
-      color: #d6336c;
+      color: #c9184a;
+      font-size: 32px;
+    }
+
+    p {
+      color: #6a040f;
+      font-size: 18px;
     }
 
     .buttons {
-      margin-top: 20px;
+      margin-top: 25px;
       position: relative;
-      height: 100px;
+      height: 120px;
     }
 
     button {
-      padding: 12px 24px;
+      padding: 14px 28px;
       font-size: 18px;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
       position: absolute;
+      transition: 0.2s ease;
     }
 
     #yesBtn {
@@ -50,6 +57,7 @@
       color: white;
       left: 50%;
       transform: translateX(-120%);
+      box-shadow: 0 8px 20px rgba(255, 77, 109, 0.4);
     }
 
     #noBtn {
@@ -66,19 +74,23 @@
 </head>
 <body>
 
+  <!-- MAIN SCREEN -->
   <div class="container" id="main">
-    <img src="cat.png" alt="Cat">
-    <h1>Will you be my Valentine? 💖</h1>
+    <img src="cat.png" alt="Cat with a gun">
+    <h1>Garu, will you be my Valentine? 💖</h1>
+    <p>(Choose wisely 😌)</p>
 
     <div class="buttons">
       <button id="yesBtn">Yes 💘</button>
-      <button id="noBtn">No 🙄</button>
+      <button id="noBtn">No 😒</button>
     </div>
   </div>
 
+  <!-- SUCCESS SCREEN -->
   <div class="container" id="success">
     <img src="yes.gif" alt="Happy GIF">
-    <h1>You made the right choice 😌💞</h1>
+    <h1>SEE? I knew it 😌💞</h1>
+    <p>You just made the best decision ever, Garu 💗</p>
   </div>
 
   <script>
@@ -88,16 +100,17 @@
     const success = document.getElementById("success");
 
     const noTexts = [
-      "Are you sure?",
-      "Really? 😳",
-      "Think again!",
-      "Wrong answer 😤",
-      "Try harder 💀"
+      "Are you sure, Garu?",
+      "Wrong choice 😳",
+      "Try again 😤",
+      "That’s illegal 💀",
+      "Reconsider 😏",
+      "Nice try 😌"
     ];
 
     noBtn.addEventListener("mouseover", () => {
-      const x = Math.random() * (window.innerWidth - 150);
-      const y = Math.random() * (window.innerHeight - 150);
+      const x = Math.random() * (window.innerWidth - 160);
+      const y = Math.random() * (window.innerHeight - 160);
 
       noBtn.style.left = `${x}px`;
       noBtn.style.top = `${y}px`;
@@ -114,3 +127,4 @@
 
 </body>
 </html>
+
